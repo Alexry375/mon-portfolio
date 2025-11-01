@@ -1,23 +1,21 @@
-import gamestackTexture2Large from '~/assets/gamestack-list-large.jpg';
-import gamestackTexture2Placeholder from '~/assets/gamestack-list-placeholder.jpg';
-import gamestackTexture2 from '~/assets/gamestack-list.jpg';
-import gamestackTextureLarge from '~/assets/gamestack-login-large.jpg';
-import gamestackTexturePlaceholder from '~/assets/gamestack-login-placeholder.jpg';
-import gamestackTexture from '~/assets/gamestack-login.jpg';
-import sliceTextureLarge from '~/assets/slice-app-large.jpg';
-import sliceTexturePlaceholder from '~/assets/slice-app-placeholder.jpg';
-import sliceTexture from '~/assets/slice-app.jpg';
-import sprTextureLarge from '~/assets/spr-lesson-builder-dark-large.jpg';
-import sprTexturePlaceholder from '~/assets/spr-lesson-builder-dark-placeholder.jpg';
-import sprTexture from '~/assets/spr-lesson-builder-dark.jpg';
 import { Footer } from '~/components/footer';
 import { baseMeta } from '~/utils/meta';
 import { Intro } from './intro';
 import { Profile } from './profile';
 import { ProjectSummary } from './project-summary';
+import { Formation } from './formation';
+import { Competences } from './competences';
+import { Mobilite } from './mobilite';
+import { Engagement } from './engagement';
+import { Activites } from './activites';
+import { VideoPresentation } from './video-presentation';
 import { useEffect, useRef, useState } from 'react';
 import config from '~/config.json';
 import styles from './home.module.css';
+
+// Assets pour le projet GIFTED
+import giftedLogo from '/Gifted_logo-removebg-preview.png';
+import giftedShot from '/Shot_Gifted.jpeg';
 
 // Prefetch draco decoader wasm
 export const links = () => {
@@ -41,8 +39,8 @@ export const links = () => {
 
 export const meta = () => {
   return baseMeta({
-    title: 'Designer + Developer',
-    description: `Design portfolio of ${config.name} — a product designer working on web & mobile apps with a focus on motion, experience design, and accessibility.`,
+    title: 'Étudiant Ingénieur en Sciences du Numérique',
+    description: `Portfolio d'${config.name} — Étudiant ingénieur à l'ENSEEIHT, passionné par le Machine Learning et l'Intelligence Artificielle.`,
   });
 };
 
@@ -50,13 +48,16 @@ export const Home = () => {
   const [visibleSections, setVisibleSections] = useState([]);
   const [scrollIndicatorHidden, setScrollIndicatorHidden] = useState(false);
   const intro = useRef();
-  const projectOne = useRef();
-  const projectTwo = useRef();
-  const projectThree = useRef();
-  const details = useRef();
+  const videoPres = useRef();
+  const formation = useRef();
+  const experiences = useRef();
+  const competences = useRef();
+  const mobilite = useRef();
+  const engagement = useRef();
+  const activites = useRef();
 
   useEffect(() => {
-    const sections = [intro, projectOne, projectTwo, projectThree, details];
+    const sections = [intro, videoPres, formation, experiences, competences, mobilite, engagement, activites];
 
     const sectionObserver = new IntersectionObserver(
       (entries, observer) => {
@@ -80,10 +81,14 @@ export const Home = () => {
     );
 
     sections.forEach(section => {
-      sectionObserver.observe(section.current);
+      if (section.current) {
+        sectionObserver.observe(section.current);
+      }
     });
 
-    indicatorObserver.observe(intro.current);
+    if (intro.current) {
+      indicatorObserver.observe(intro.current);
+    }
 
     return () => {
       sectionObserver.disconnect();
@@ -98,76 +103,63 @@ export const Home = () => {
         sectionRef={intro}
         scrollIndicatorHidden={scrollIndicatorHidden}
       />
+
+      <VideoPresentation
+        id="video-presentation"
+        sectionRef={videoPres}
+        visible={visibleSections.includes(videoPres.current)}
+      />
+
+      <Formation
+        id="formation"
+        sectionRef={formation}
+        visible={visibleSections.includes(formation.current)}
+      />
+
       <ProjectSummary
-        id="project-1"
-        sectionRef={projectOne}
-        visible={visibleSections.includes(projectOne.current)}
-        index={1}
-        title="Designing the future of education"
-        description="Designing a platform to help educators build better online courseware"
-        buttonText="View project"
-        buttonLink="/projects/smart-sparrow"
+        id="experiences"
+        sectionRef={experiences}
+        visible={visibleSections.includes(experiences.current)}
+        title="GIFTED - Application de recommandation de cadeaux par IA"
+        description="Développement d'une application mobile innovante utilisant l'intelligence artificielle pour recommander des cadeaux personnalisés. Intégration d'APIs e-commerce et création d'algorithmes de personnalisation avancés."
+        buttonText="Voir la démo (Coming soon)"
+        buttonLink="#"
         model={{
           type: 'laptop',
-          alt: 'Smart Sparrow lesson builder',
+          alt: 'Application GIFTED - Recommandation de cadeaux par IA',
           textures: [
             {
-              srcSet: `${sprTexture} 1280w, ${sprTextureLarge} 2560w`,
-              placeholder: sprTexturePlaceholder,
+              srcSet: `${giftedShot} 800w, ${giftedShot} 1920w`,
+              placeholder: giftedShot,
             },
           ],
         }}
       />
-      <ProjectSummary
-        id="project-2"
-        alternate
-        sectionRef={projectTwo}
-        visible={visibleSections.includes(projectTwo.current)}
-        index={2}
-        title="Video game progress tracking"
-        description="Design and development for a video game tracking app built in React Native"
-        buttonText="View website"
-        buttonLink="https://gamestack.hamishw.com"
-        model={{
-          type: 'phone',
-          alt: 'App login screen',
-          textures: [
-            {
-              srcSet: `${gamestackTexture} 375w, ${gamestackTextureLarge} 750w`,
-              placeholder: gamestackTexturePlaceholder,
-            },
-            {
-              srcSet: `${gamestackTexture2} 375w, ${gamestackTexture2Large} 750w`,
-              placeholder: gamestackTexture2Placeholder,
-            },
-          ],
-        }}
+
+      <Competences
+        id="competences"
+        sectionRef={competences}
+        visible={visibleSections.includes(competences.current)}
       />
-      <ProjectSummary
-        id="project-3"
-        sectionRef={projectThree}
-        visible={visibleSections.includes(projectThree.current)}
-        index={3}
-        title="Biomedical image collaboration"
-        description="Increasing the amount of collaboration in Slice, an app for biomedical imaging"
-        buttonText="View project"
-        buttonLink="/projects/slice"
-        model={{
-          type: 'laptop',
-          alt: 'Annotating a biomedical image in the Slice app',
-          textures: [
-            {
-              srcSet: `${sliceTexture} 800w, ${sliceTextureLarge} 1920w`,
-              placeholder: sliceTexturePlaceholder,
-            },
-          ],
-        }}
+
+      <Mobilite
+        id="mobilite"
+        sectionRef={mobilite}
+        visible={visibleSections.includes(mobilite.current)}
       />
-      <Profile
-        sectionRef={details}
-        visible={visibleSections.includes(details.current)}
-        id="details"
+
+      <Engagement
+        id="engagement"
+        sectionRef={engagement}
+        visible={visibleSections.includes(engagement.current)}
       />
+
+      <Activites
+        id="activites"
+        sectionRef={activites}
+        visible={visibleSections.includes(activites.current)}
+      />
+
       <Footer />
     </div>
   );

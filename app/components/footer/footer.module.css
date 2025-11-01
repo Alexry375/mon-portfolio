@@ -21,4 +21,9 @@
     padding-right: var(--spaceXS);
     display: inline-flex;
   }
+
+  .separator {
+    padding: 0 var(--spaceXS);
+    opacity: 0.5;
+  }
 }
