@@ -108,27 +108,39 @@ const tokensMobileSmall = {
 
 // Tokens that change based on theme
 const dark = {
-  background: 'oklch(17.76% 0 0)',
-  backgroundLight: 'oklch(21.78% 0 0)',
-  primary: 'oklch(84.42% 0.19 202.24)',
-  accent: 'oklch(84.42% 0.19 202.24)',
-  error: 'oklch(65.91% 0.249 13.76)',
+  background: '#111111',
+  backgroundLight: '#1a1a1a',
+  primary: '#64B4F6',
+  accent: '#64B4F6',
+  error: '#F06292',
   text: 'var(--white)',
   textTitle: 'var(--text)',
   textBody: 'color-mix(in lab, var(--text) 80%, transparent)',
   textLight: 'color-mix(in lab, var(--text) 60%, transparent)',
+  // RGB values for use with rgb() function
+  rgbBackground: '17, 17, 17',
+  rgbBackgroundLight: '26, 26, 26',
+  rgbPrimary: '100, 180, 246',
+  rgbAccent: '100, 180, 246',
+  rgbText: '255, 255, 255',
 };
 
 const light = {
-  background: 'oklch(96.12% 0 0)',
+  background: '#f5f5f5',
   backgroundLight: 'var(--white)',
   primary: 'var(--black)',
-  accent: 'oklch(84.42% 0.19 202.24)',
-  error: 'oklch(63.17% 0.259 25.41)',
+  accent: '#64B4F6',
+  error: '#E57373',
   text: 'var(--black)',
   textTitle: 'color-mix(in lab, var(--text) 90%, transparent)',
   textBody: 'color-mix(in lab, var(--text) 75%, transparent)',
   textLight: 'color-mix(in lab, var(--text) 55%, transparent)',
+  // RGB values for use with rgb() function
+  rgbBackground: '245, 245, 245',
+  rgbBackgroundLight: '255, 255, 255',
+  rgbPrimary: '0, 0, 0',
+  rgbAccent: '100, 180, 246',
+  rgbText: '0, 0, 0',
 };
 
 export const tokens = {

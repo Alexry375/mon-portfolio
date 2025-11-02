@@ -17,15 +17,15 @@ export function VideoPresentation({ id, sectionRef, visible }) {
         {({ visible }) => (
           <div className={styles.content} data-visible={visible}>
             <Heading level={2} className={styles.title}>
-              Présentation de mon e-portfolio
+              Video Introduction
             </Heading>
             <div className={styles.videoContainer}>
               <div className={styles.videoPlaceholder}>
                 <Text size="l" className={styles.placeholderText}>
-                  Vidéo de présentation à venir
+                  Introduction video coming soon
                 </Text>
                 <Text size="m" className={styles.placeholderSubtext}>
-                  Dans cette vidéo, je présente mon parcours, mes projets et mes ambitions dans le domaine du Machine Learning et de l'Intelligence Artificielle.
+                  In this video, I present my journey, projects, and ambitions in Machine Learning and Artificial Intelligence.
                 </Text>
               </div>
             </div>

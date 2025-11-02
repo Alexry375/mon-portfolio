@@ -110,7 +110,7 @@
   display: flex;
   align-items: center;
   margin-bottom: var(--spaceXL);
-  padding-left: var(--space5XL);
+  padding-left: calc(var(--space5XL) + 40px);
 }
 
 .tagText {

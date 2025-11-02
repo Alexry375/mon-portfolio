@@ -68,6 +68,7 @@ export function Formation({ id, sectionRef, visible }) {
                   <Text className={styles.degree}>
                     Preparatory Classes MPI (Math, Physics, CS)
                   </Text>
+                  {' '}
                   <Text className={styles.description}>
                     Intensive math and CS training. Coded in Python, OCaml, and C. Studied data structures and algorithmic complexity.
                   </Text>
@@ -91,6 +92,7 @@ export function Formation({ id, sectionRef, visible }) {
                   <Text className={styles.degree}>
                     High Honors (Mention Très Bien)
                   </Text>
+                  {' '}
                   <Text className={styles.description}>
                     Math & Engineering specializations
                   </Text>
