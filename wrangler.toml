@@ -2,6 +2,3 @@ name = "mon-portfolio"
 compatibility_date = "2025-11-02"
 main = "build/server/index.js"
 
-kv_namespaces = [
-  { id = "MY_KV", binding="MY_KV" }
-]
