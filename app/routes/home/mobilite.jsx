@@ -12,22 +12,16 @@ import styles from './mobilite.module.css';
 const MobiliteText = ({ visible, titleId }) => (
   <Fragment>
     <Heading className={styles.title} data-visible={visible} level={3} id={titleId}>
-      <DecoderText text="Mobilité internationale" start={visible} delay={500} />
+      <DecoderText text="Mobility" start={visible} delay={500} />
     </Heading>
     <Text className={styles.description} data-visible={visible} size="l" as="p">
-      Je souhaite effectuer un échange académique à l'<Link href="https://www.usherbrooke.ca">Université de Sherbrooke</Link> au Canada
-      pour enrichir mon parcours en intelligence artificielle. Cette université propose une maîtrise
-      en informatique avec une grande flexibilité dans le choix des cours, notamment en Machine Learning.
+      Planning an exchange at <Link href="https://www.usherbrooke.ca">Université de Sherbrooke</Link> in Canada to dive deeper into AI. They offer a flexible CS master's with strong Machine Learning courses.
     </Text>
     <Text className={styles.description} data-visible={visible} size="l" as="p">
-      Cette expérience internationale me permettrait d'approfondir mes connaissances techniques tout en
-      découvrant de nouvelles approches pédagogiques et méthodologies de recherche nord-américaines.
-      L'environnement multiculturel et l'excellence académique de Sherbrooke constituent une opportunité
-      unique pour développer mes compétences et élargir ma vision de l'IA.
+      I want to experience North American research methods and expand my AI perspective in a multicultural environment.
     </Text>
     <Text className={styles.note} data-visible={visible} size="m" as="p">
-      Note: Mon projet de formation en alternance avec MODIA pourrait influencer cette décision,
-      mais l'expérience internationale reste une priorité dans mon parcours académique.
+      Note: My apprenticeship project with MODIA might affect this timeline, but international experience remains a priority.
     </Text>
   </Fragment>
 );
@@ -61,7 +55,7 @@ export const Mobilite = ({ id, visible, sectionRef }) => {
                 rel="noopener noreferrer"
                 icon="arrow-right"
               >
-                Découvrir le programme
+                View program
               </Button>
             </div>
             <div className={styles.column}>
@@ -73,7 +67,7 @@ export const Mobilite = ({ id, visible, sectionRef }) => {
                   collapseDelay={1000}
                 />
                 <div className={styles.tagText} data-visible={visible}>
-                  Échange
+                  Exchange
                 </div>
               </div>
               <div className={styles.highlights}>
@@ -82,21 +76,21 @@ export const Mobilite = ({ id, visible, sectionRef }) => {
                     Université de Sherbrooke
                   </Heading>
                   <Text className={styles.highlightText}>
-                    • Programme de maîtrise flexible<br />
-                    • Spécialisation en Machine Learning<br />
-                    • Environnement de recherche stimulant<br />
-                    • Campus francophone en Amérique du Nord
+                    • Flexible master's program<br />
+                    • ML specialization<br />
+                    • Strong research environment<br />
+                    • French campus in North America
                   </Text>
                 </div>
                 <div className={styles.highlight} data-visible={visible} data-delay>
                   <Heading level={4} className={styles.highlightTitle}>
-                    Objectifs de l'échange
+                    Goals
                   </Heading>
                   <Text className={styles.highlightText}>
-                    • Approfondir les techniques d'IA avancées<br />
-                    • Découvrir de nouvelles méthodologies<br />
-                    • Développer un réseau international<br />
-                    • Améliorer mon anglais technique
+                    • Advanced AI techniques<br />
+                    • New methodologies<br />
+                    • International network<br />
+                    • Improve technical English
                   </Text>
                 </div>
               </div>

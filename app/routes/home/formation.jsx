@@ -19,7 +19,7 @@ export function Formation({ id, sectionRef, visible }) {
         {({ visible }) => (
           <div className={styles.content} data-visible={visible}>
             <Heading level={2} className={styles.title}>
-              Formation
+              Engineering Courses
             </Heading>
 
             <div className={styles.timeline}>
@@ -29,7 +29,7 @@ export function Formation({ id, sectionRef, visible }) {
                   <div className={styles.institutionHeader}>
                     <Image
                       src={n7Logo}
-                      alt="Logo ENSEEIHT"
+                      alt="ENSEEIHT Logo"
                       className={styles.logo}
                       style={{ width: '80px', height: 'auto' }}
                     />
@@ -38,25 +38,22 @@ export function Formation({ id, sectionRef, visible }) {
                         ENSEEIHT - Toulouse INP
                       </Heading>
                       <Text className={styles.degree}>
-                        Diplôme d'Ingénieur en Sciences du Numérique
+                        Engineering Degree in Computer Science
                       </Text>
                     </div>
                   </div>
                   <Text className={styles.description}>
-                    Formation d'excellence en ingénierie informatique avec une spécialisation
-                    en Intelligence Artificielle et Machine Learning. Apprentissage approfondi
-                    des mathématiques appliquées, de l'algorithmique avancée et des systèmes
-                    distribués. Projets pratiques en développement logiciel et en data science.
+                    Specializing in AI and Deep Learning. Covering applied math, algorithms, and distributed systems through hands-on projects.
                   </Text>
                   <div className={styles.highlights}>
                     <Text size="s" className={styles.highlight}>
-                      • Délégué de groupe
+                      • Class representative
                     </Text>
                     <Text size="s" className={styles.highlight}>
-                      • Spécialisation IA et Deep Learning
+                      • AI & Deep Learning track
                     </Text>
                     <Text size="s" className={styles.highlight}>
-                      • Projets en équipe multidisciplinaire
+                      • Team projects in software dev
                     </Text>
                   </div>
                 </div>
@@ -69,23 +66,17 @@ export function Formation({ id, sectionRef, visible }) {
                     Lycée Franklin Roosevelt - Reims
                   </Heading>
                   <Text className={styles.degree}>
-                    Classes Préparatoires MPI (Mathématiques, Physique, Informatique)
+                    Preparatory Classes MPI (Math, Physics, CS)
                   </Text>
                   <Text className={styles.description}>
-                    Formation intensive en mathématiques et sciences physiques avec une forte
-                    composante informatique. Développement d'une rigueur scientifique et d'une
-                    capacité d'abstraction mathématique. Programmation en Python, OCaml et C,
-                    étude des structures de données et de la complexité algorithmique.
+                    Intensive math and CS training. Coded in Python, OCaml, and C. Studied data structures and algorithmic complexity.
                   </Text>
                   <div className={styles.highlights}>
                     <Text size="s" className={styles.highlight}>
-                      • Excellence en mathématiques et informatique
+                      • Strong math & CS background
                     </Text>
                     <Text size="s" className={styles.highlight}>
-                      • Admis aux concours des grandes écoles d'ingénieurs
-                    </Text>
-                    <Text size="s" className={styles.highlight}>
-                      • Projets de programmation avancée
+                      • Admitted to top engineering schools
                     </Text>
                   </div>
                 </div>
@@ -95,13 +86,13 @@ export function Formation({ id, sectionRef, visible }) {
                 <div className={styles.timelinePeriod}>2021</div>
                 <div className={styles.timelineContent}>
                   <Heading level={3} className={styles.institution}>
-                    Baccalauréat Général
+                    Baccalauréat
                   </Heading>
                   <Text className={styles.degree}>
-                    Mention Très Bien
+                    High Honors (Mention Très Bien)
                   </Text>
                   <Text className={styles.description}>
-                    Spécialités Mathématiques et Sciences de l'Ingénieur
+                    Math & Engineering specializations
                   </Text>
                 </div>
               </div>

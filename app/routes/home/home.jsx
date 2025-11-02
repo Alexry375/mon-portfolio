@@ -121,13 +121,13 @@ export const Home = () => {
         id="experiences"
         sectionRef={experiences}
         visible={visibleSections.includes(experiences.current)}
-        title="GIFTED - Expériences narratives propulsées par l'IA"
-        description="GIFTED révolutionne l'art d'offrir en transformant vos souvenirs (photos, vidéos) en expériences narratives immersives propulsées par l'IA. Un chatbot intelligent crée une histoire personnalisée unique, proposée en format physique (coffret avec NFC/USB) ou 100% digital."
-        buttonText="Voir le MVP (Coming soon)"
+        title="GIFTED - AI-Powered Gift Experiences"
+        description="AI app that turns memories (photos/videos) into personalized gift narratives. Available as physical boxes (NFC/USB) or 100% digital."
+        buttonText="View MVP (Coming soon)"
         buttonLink="#"
         model={{
           type: 'laptop',
-          alt: 'Application GIFTED - Recommandation de cadeaux par IA',
+          alt: 'GIFTED App - AI Gift Recommendations',
           textures: [
             {
               srcSet: `${giftedShot} 800w, ${giftedShot} 1920w`,

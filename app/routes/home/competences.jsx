@@ -6,35 +6,35 @@ import styles from './competences.module.css';
 
 export function Competences({ id, sectionRef, visible }) {
   const skills = {
-    'Langages de programmation': [
-      { name: 'Python', description: 'Machine Learning, Data Science, Backend' },
-      { name: 'C', description: 'Programmation système, Algorithmes' },
-      { name: 'MATLAB', description: 'Calcul scientifique, Simulations' },
-      { name: 'OCaml', description: 'Programmation fonctionnelle' },
-      { name: 'Ada', description: 'Programmation temps réel' },
-      { name: 'Java', description: 'POO, Applications entreprise' },
-      { name: 'JavaScript/React', description: 'Développement web' }
+    'Programming Languages': [
+      { name: 'Python', description: 'ML, Data Science, Backend' },
+      { name: 'C', description: 'Systems, Algorithms' },
+      { name: 'MATLAB', description: 'Scientific computing' },
+      { name: 'OCaml', description: 'Functional programming' },
+      { name: 'Ada', description: 'Real-time systems' },
+      { name: 'Java', description: 'OOP, Enterprise apps' },
+      { name: 'JavaScript/React', description: 'Web development' }
     ],
-    'Machine Learning & IA': [
+    'Machine Learning & AI': [
       { name: 'TensorFlow/PyTorch', description: 'Deep Learning' },
-      { name: 'Computer Vision', description: 'Traitement d\'image' },
-      { name: 'NLP', description: 'Traitement du langage naturel' },
-      { name: 'Reinforcement Learning', description: 'Apprentissage par renforcement' },
-      { name: 'Scikit-learn', description: 'ML classique' }
+      { name: 'Computer Vision', description: 'Image processing' },
+      { name: 'NLP', description: 'Natural language' },
+      { name: 'Reinforcement Learning', description: 'RL algorithms' },
+      { name: 'Scikit-learn', description: 'Classical ML' }
     ],
-    'Outils & Technologies': [
-      { name: 'Docker', description: 'Conteneurisation' },
-      { name: 'Linux', description: 'Administration système' },
-      { name: 'SQL', description: 'Bases de données' },
-      { name: 'Cloud (AWS/GCP)', description: 'Services cloud' }
+    'Tools & Tech': [
+      { name: 'Docker', description: 'Containerization' },
+      { name: 'Linux', description: 'System admin' },
+      { name: 'SQL', description: 'Databases' },
+      { name: 'Cloud (AWS/GCP)', description: 'Cloud services' }
     ],
-    'Compétences transversales': [
-      { name: 'Gestion de projet', description: 'Agile, Scrum' },
-      { name: 'Communication', description: 'Présentation, Documentation' },
-      { name: 'Travail en équipe', description: 'Collaboration, Leadership' },
-      { name: 'Anglais', description: 'B2/C1 - Professionnel' },
-      { name: 'Japonais', description: 'Niveau débutant - Cours à l\'ENSEEIHT' },
-      { name: 'Veille technologique', description: 'Curiosité, Auto-formation' }
+    'Soft Skills': [
+      { name: 'Project Management', description: 'Agile, Scrum' },
+      { name: 'Communication', description: 'Presentation, Docs' },
+      { name: 'Teamwork', description: 'Collaboration, Leadership' },
+      { name: 'English', description: 'B2/C1 - Professional' },
+      { name: 'Japanese', description: 'Beginner - ENSEEIHT courses' },
+      { name: 'Tech Watch', description: 'Self-learning' }
     ]
   };
 
@@ -50,7 +50,7 @@ export function Competences({ id, sectionRef, visible }) {
         {({ visible }) => (
           <div className={styles.content} data-visible={visible}>
             <Heading level={2} className={styles.title}>
-              Compétences
+              Skills
             </Heading>
 
             <div className={styles.skillsGrid}>
@@ -85,9 +85,7 @@ export function Competences({ id, sectionRef, visible }) {
 
             <div className={styles.additionalInfo}>
               <Text className={styles.infoText}>
-                En constante évolution, je m'efforce d'approfondir mes connaissances
-                en Machine Learning et Intelligence Artificielle tout en maintenant
-                une solide base en développement logiciel et en mathématiques appliquées.
+                Constantly learning and deepening my ML & AI skills while maintaining a strong foundation in software development and applied math.
               </Text>
             </div>
           </div>

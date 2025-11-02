@@ -2,35 +2,35 @@ import config from '~/config.json';
 
 export const navLinks = [
   {
-    label: 'Accueil',
+    label: 'Home',
     pathname: '/',
   },
   {
-    label: 'Formation',
+    label: 'Engineering Courses',
     pathname: '/#formation',
   },
   {
-    label: 'Expériences',
+    label: 'Projects',
     pathname: '/#experiences',
   },
   {
-    label: 'Compétences',
+    label: 'Skills',
     pathname: '/#competences',
   },
   {
-    label: 'Mobilité',
+    label: 'Mobility',
     pathname: '/#mobilite',
   },
   {
-    label: 'Engagement',
+    label: 'Civic Engagement',
     pathname: '/#engagement',
   },
   {
-    label: 'Activités',
+    label: 'Sports & Activities',
     pathname: '/#activites',
   },
   {
-    label: 'À propos',
+    label: 'About',
     pathname: '/#profile',
   },
   {

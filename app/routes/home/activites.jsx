@@ -11,24 +11,13 @@ import styles from './activites.module.css';
 const ActivitesText = ({ visible, titleId }) => (
   <Fragment>
     <Heading className={styles.title} data-visible={visible} level={3} id={titleId}>
-      <DecoderText text="Activités et passions" start={visible} delay={500} />
+      <DecoderText text="Sports & Activities" start={visible} delay={500} />
     </Heading>
     <Text className={styles.description} data-visible={visible} size="l" as="p">
-      Au-delà de mes études, je suis passionné par l'écosystème technologique et j'assiste
-      régulièrement à des événements tech sur Toulouse. Grâce à l'application <Link href="https://www.meetup.com/fr-FR/">Meetup</Link>,
-      je découvre et participe à des conférences, des hackathons et des meetups qui enrichissent
-      ma culture technologique.
+      I attend tech events in Toulouse using <Link href="https://www.meetup.com/fr-FR/">Meetup</Link> - TEDx, AI conferences, and hackathons. Great for staying updated and networking.
     </Text>
     <Text className={styles.description} data-visible={visible} size="l" as="p">
-      Ces événements, comme les TEDx Toulouse ou les conférences sur l'IA et le développement,
-      me permettent de rester à la pointe des dernières innovations, d'échanger avec des
-      professionnels du secteur et d'élargir mon réseau dans la communauté tech toulousaine.
-    </Text>
-    <Text className={styles.description} data-visible={visible} size="l" as="p">
-      Pour maintenir un équilibre sain entre travail intellectuel et activité physique, je pratique
-      régulièrement la calisthénie chez moi. Cette discipline, basée sur le poids du corps, me permet
-      de rester en forme tout en développant force, mobilité et discipline - des qualités qui se
-      reflètent également dans mon approche du développement et de la résolution de problèmes.
+      For balance, I practice calisthenics at home. Keeps me fit and focused.
     </Text>
   </Fragment>
 );
@@ -41,29 +30,29 @@ export const Activites = ({ id, visible, sectionRef }) => {
     {
       type: 'TEDx',
       title: 'TEDx Toulouse',
-      description: 'Conférences inspirantes sur l\'innovation et la technologie',
-      frequency: '2-3 fois par an',
+      description: 'Innovation & tech talks',
+      frequency: '2-3 times/year',
       icon: '🎤'
     },
     {
       type: 'Meetup',
       title: 'Toulouse Data Science',
-      description: 'Rencontres autour du Machine Learning et de la Data Science',
-      frequency: 'Mensuel',
+      description: 'ML & Data Science meetups',
+      frequency: 'Monthly',
       icon: '📊'
     },
     {
-      type: 'Conférence',
+      type: 'Conference',
       title: 'DevFest Toulouse',
-      description: 'Festival des développeurs avec talks et ateliers pratiques',
-      frequency: 'Annuel',
+      description: 'Dev festival with talks & workshops',
+      frequency: 'Yearly',
       icon: '💻'
     },
     {
       type: 'Hackathon',
-      title: 'Hackathons étudiants',
-      description: 'Compétitions de coding et projets innovants en équipe',
-      frequency: 'Trimestriel',
+      title: 'Student Hackathons',
+      description: 'Coding competitions',
+      frequency: 'Quarterly',
       icon: '🚀'
     }
   ];
@@ -86,31 +75,27 @@ export const Activites = ({ id, visible, sectionRef }) => {
               <ActivitesText visible={visible} titleId={titleId} />
               <div className={styles.benefits}>
                 <Heading level={4} className={styles.benefitsTitle} data-visible={visible}>
-                  Ce que ces activités m'apportent
+                  What I gain
                 </Heading>
                 <div className={styles.benefitsList}>
                   <div className={styles.benefit} data-visible={visible}>
                     <Text className={styles.benefitText}>
-                      <strong>Veille technologique :</strong> Découverte des dernières tendances
-                      et innovations en IA et développement
+                      <strong>Tech trends:</strong> Latest AI & dev innovations
                     </Text>
                   </div>
                   <div className={styles.benefit} data-visible={visible} data-delay="100">
                     <Text className={styles.benefitText}>
-                      <strong>Networking :</strong> Rencontres avec des professionnels et
-                      étudiants partageant les mêmes passions
+                      <strong>Networking:</strong> Meeting pros and students
                     </Text>
                   </div>
                   <div className={styles.benefit} data-visible={visible} data-delay="200">
                     <Text className={styles.benefitText}>
-                      <strong>Apprentissage continu :</strong> Acquisition de nouvelles
-                      compétences et perspectives différentes
+                      <strong>Learning:</strong> New skills & perspectives
                     </Text>
                   </div>
                   <div className={styles.benefit} data-visible={visible} data-delay="300">
                     <Text className={styles.benefitText}>
-                      <strong>Inspiration :</strong> Motivation pour lancer mes propres
-                      projets innovants
+                      <strong>Inspiration:</strong> Ideas for my own projects
                     </Text>
                   </div>
                 </div>
@@ -125,7 +110,7 @@ export const Activites = ({ id, visible, sectionRef }) => {
                   collapseDelay={1000}
                 />
                 <div className={styles.tagText} data-visible={visible}>
-                  Événements
+                  Events
                 </div>
               </div>
               <div className={styles.eventsGrid}>

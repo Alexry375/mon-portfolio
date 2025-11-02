@@ -18,19 +18,13 @@ import styles from './profile.module.css';
 const ProfileText = ({ visible, titleId }) => (
   <Fragment>
     <Heading className={styles.title} data-visible={visible} level={3} id={titleId}>
-      <DecoderText text="Bonjour !" start={visible} delay={500} />
+      <DecoderText text="Hi there!" start={visible} delay={500} />
     </Heading>
     <Text className={styles.description} data-visible={visible} size="l" as="p">
-      Je suis Alexis, étudiant ingénieur à l'ENSEEIHT à Toulouse, passionné par le Deep Learning
-      et l'Intelligence Artificielle. Je développe actuellement GIFTED, une application innovante
-      qui utilise l'IA pour créer des expériences de cadeaux personnalisés à partir de souvenirs.
-      Allier code et créativité me permet de transformer des idées en solutions concrètes.
+      I'm Alexis, engineering student at ENSEEIHT in Toulouse. Currently building GIFTED, an AI app that turns memories into personalized gift experiences.
     </Text>
     <Text className={styles.description} data-visible={visible} size="l" as="p">
-      Au-delà de l'informatique, je m'intéresse à la philosophie et aux mathématiques, disciplines
-      qui nourrissent ma réflexion et ma rigueur. Pour maintenir un équilibre, je pratique
-      régulièrement la calisthénie. Je suis toujours ouvert aux discussions sur de nouveaux projets
-      et aux collaborations enrichissantes.
+      I'm into Deep Learning, math, and philosophy. I do calisthenics to stay balanced. Always down to chat about new projects.
     </Text>
   </Fragment>
 );
@@ -62,7 +56,7 @@ export const Profile = ({ id, visible, sectionRef }) => {
                 href="/contact"
                 icon="send"
               >
-                Me contacter
+                Contact me
               </Button>
             </div>
             <div className={styles.column}>
