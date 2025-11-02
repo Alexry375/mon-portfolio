@@ -55,9 +55,10 @@ export const Home = () => {
   const mobilite = useRef();
   const engagement = useRef();
   const activites = useRef();
+  const profile = useRef();
 
   useEffect(() => {
-    const sections = [intro, videoPres, formation, experiences, competences, mobilite, engagement, activites];
+    const sections = [intro, videoPres, formation, experiences, competences, mobilite, engagement, activites, profile];
 
     const sectionObserver = new IntersectionObserver(
       (entries, observer) => {
@@ -158,6 +159,12 @@ export const Home = () => {
         id="activites"
         sectionRef={activites}
         visible={visibleSections.includes(activites.current)}
+      />
+
+      <Profile
+        id="profile"
+        sectionRef={profile}
+        visible={visibleSections.includes(profile.current)}
       />
 
       <Footer />

@@ -30,6 +30,10 @@ export const navLinks = [
     pathname: '/#activites',
   },
   {
+    label: 'À propos',
+    pathname: '/#profile',
+  },
+  {
     label: 'Contact',
     pathname: '/contact',
   },
