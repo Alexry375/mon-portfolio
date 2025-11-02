@@ -21,6 +21,17 @@ const EngagementText = ({ visible, titleId }) => (
       J'assure la bonne communication entre élèves et l'équipe pédagogique. Cette expérience
       m'a appris l'importance de l'écoute active et de la diplomatie dans la résolution de problèmes.
     </Text>
+    <Text className={styles.description} data-visible={visible} size="l" as="p">
+      Je suis également membre de l'association Genius7, l'association entrepreneuriale de l'ENSEEIHT,
+      qui accompagne et soutient les projets innovants des étudiants. Cette implication me permet de
+      développer mon esprit entrepreneurial et de participer à un écosystème dynamique d'innovation.
+    </Text>
+    <Text className={styles.description} data-visible={visible} size="l" as="p">
+      Mon engagement a débuté dès le lycée : gestion du club journalistique, chef du pôle musique pour
+      l'association ETM (Every Talent Matters), DJ lors du bal de première. Pendant ma prépa, j'ai
+      développé un bot Discord pour faciliter l'organisation des sessions d'étude collectives et renforcer
+      la cohésion de la promotion.
+    </Text>
   </Fragment>
 );
 

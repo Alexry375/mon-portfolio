@@ -120,9 +120,9 @@ export const Home = () => {
         id="experiences"
         sectionRef={experiences}
         visible={visibleSections.includes(experiences.current)}
-        title="GIFTED - Application de recommandation de cadeaux par IA"
-        description="Développement d'une application mobile innovante utilisant l'intelligence artificielle pour recommander des cadeaux personnalisés. Intégration d'APIs e-commerce et création d'algorithmes de personnalisation avancés."
-        buttonText="Voir la démo (Coming soon)"
+        title="GIFTED - Expériences narratives propulsées par l'IA"
+        description="GIFTED révolutionne l'art d'offrir en transformant vos souvenirs (photos, vidéos) en expériences narratives immersives propulsées par l'IA. Un chatbot intelligent crée une histoire personnalisée unique, proposée en format physique (coffret avec NFC/USB) ou 100% digital."
+        buttonText="Voir le MVP (Coming soon)"
         buttonLink="#"
         model={{
           type: 'laptop',

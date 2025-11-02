@@ -23,7 +23,6 @@ export function Competences({ id, sectionRef, visible }) {
       { name: 'Scikit-learn', description: 'ML classique' }
     ],
     'Outils & Technologies': [
-      { name: 'Git', description: 'Versioning, Collaboration' },
       { name: 'Docker', description: 'Conteneurisation' },
       { name: 'Linux', description: 'Administration système' },
       { name: 'SQL', description: 'Bases de données' },
