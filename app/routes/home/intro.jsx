@@ -5,6 +5,7 @@ import { useTheme } from '~/components/theme-provider';
 import { tokens } from '~/components/theme-provider/theme';
 import { Transition } from '~/components/transition';
 import { VisuallyHidden } from '~/components/visually-hidden';
+import { Button } from '~/components/button';
 import { Link as RouterLink } from '@remix-run/react';
 import { useInterval, usePrevious, useScrollToHash } from '~/hooks';
 import { Suspense, lazy, useEffect, useState } from 'react';
@@ -110,6 +111,24 @@ export function Intro({ id, sectionRef, scrollIndicatorHidden, ...rest }) {
                   ))}
                 </div>
               </Heading>
+              <div className={styles.cvButtons}>
+                <Button
+                  href="/cv"
+                  iconHoverShift
+                  icon="send"
+                >
+                  View My CV
+                </Button>
+                <Button
+                  href={`https://linkedin.com/in/${config.linkedin}`}
+                  iconHoverShift
+                  icon="linkedin"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  LinkedIn
+                </Button>
+              </div>
             </header>
             <RouterLink
               to="/#project-1"

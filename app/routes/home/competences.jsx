@@ -32,8 +32,8 @@ export function Competences({ id, sectionRef, visible }) {
       { name: 'Project Management', description: 'Agile, Scrum' },
       { name: 'Communication', description: 'Presentation, Docs' },
       { name: 'Teamwork', description: 'Collaboration, Leadership' },
-      { name: 'English', description: 'B2/C1 - Professional' },
-      { name: 'Japanese', description: 'Beginner - ENSEEIHT courses' },
+      { name: 'English', description: 'B1 - Intermediate' },
+      { name: 'Japanese', description: 'Beginner' },
       { name: 'Tech Watch', description: 'Self-learning' }
     ]
   };

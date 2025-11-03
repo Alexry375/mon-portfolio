@@ -3,10 +3,12 @@ import { Heading } from '~/components/heading';
 import { Text } from '~/components/text';
 import { Transition } from '~/components/transition';
 import { Image } from '~/components/image';
+import { useState } from 'react';
 import n7Logo from '/Logo-toulouse-inp-N7.png';
 import styles from './formation.module.css';
 
 export function Formation({ id, sectionRef, visible }) {
+  const [videoRevealed, setVideoRevealed] = useState(false);
   return (
     <Section
       className={styles.formation}
@@ -25,35 +27,54 @@ export function Formation({ id, sectionRef, visible }) {
             <div className={styles.timeline}>
               <div className={styles.timelineItem}>
                 <div className={styles.timelinePeriod}>2023 - 2026</div>
-                <div className={styles.timelineContent}>
-                  <div className={styles.institutionHeader}>
-                    <Image
-                      src={n7Logo}
-                      alt="ENSEEIHT Logo"
-                      className={styles.logo}
-                      style={{ width: '80px', height: 'auto' }}
-                    />
-                    <div>
-                      <Heading level={3} className={styles.institution}>
-                        ENSEEIHT - Toulouse INP
-                      </Heading>
-                      <Text className={styles.degree}>
-                        Engineering Degree in Computer Science
+                <div className={styles.timelineWithVideo}>
+                  <div className={styles.timelineContent}>
+                    <div className={styles.institutionHeader}>
+                      <Image
+                        src={n7Logo}
+                        alt="ENSEEIHT Logo"
+                        className={styles.logo}
+                        style={{ width: '80px', height: 'auto' }}
+                      />
+                      <div>
+                        <Heading level={3} className={styles.institution}>
+                          ENSEEIHT - Toulouse INP
+                        </Heading>
+                        <Text className={styles.degree}>
+                          Engineering Degree in Computer Science
+                        </Text>
+                      </div>
+                    </div>
+                    <Text className={styles.description}>
+                      Specializing in AI and Deep Learning. Covering applied math, algorithms, and distributed systems through hands-on projects.
+                    </Text>
+                    <div className={styles.highlights}>
+                      <Text size="s" className={styles.highlight}>
+                        • Class representative
+                      </Text>
+                      <Text size="s" className={styles.highlight}>
+                        • AI & Deep Learning track
+                      </Text>
+                      <Text size="s" className={styles.highlight}>
+                        • Team projects in software dev
                       </Text>
                     </div>
                   </div>
-                  <Text className={styles.description}>
-                    Specializing in AI and Deep Learning. Covering applied math, algorithms, and distributed systems through hands-on projects.
-                  </Text>
-                  <div className={styles.highlights}>
-                    <Text size="s" className={styles.highlight}>
-                      • Class representative
-                    </Text>
-                    <Text size="s" className={styles.highlight}>
-                      • AI & Deep Learning track
-                    </Text>
-                    <Text size="s" className={styles.highlight}>
-                      • Team projects in software dev
+                  <div className={styles.videoWrapper}>
+                    <div
+                      className={styles.videoContainer}
+                      onMouseEnter={() => setVideoRevealed(true)}
+                      data-revealed={videoRevealed}
+                    >
+                      <iframe
+                        src={videoRevealed ? "https://drive.google.com/file/d/1DzoiV7Jl-muLI-nqtlfcXDe0_4AB-WAS/preview" : "about:blank"}
+                        className={styles.videoIframe}
+                        allow="autoplay"
+                        title="Introduction video"
+                      />
+                    </div>
+                    <Text size="s" className={styles.videoCaption}>
+                      Video presentation
                     </Text>
                   </div>
                 </div>

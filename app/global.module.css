@@ -9,6 +9,12 @@
 @custom-media --mediaTouch (pointer: coarse);
 @custom-media --mediaNoTouch (pointer: fine);
 
+/* Critical styles OUTSIDE @layer for maximum priority */
+:global(html, body) {
+  font-family: var(--fontStack);
+  background-color: var(--background);
+}
+
 @layer base {
   :global(:root) {
     --mobileNavOffset: calc(var(--spaceOuter) * 2 + var(--space2XL));

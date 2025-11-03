@@ -8,7 +8,6 @@ import { Competences } from './competences';
 import { Mobilite } from './mobilite';
 import { Engagement } from './engagement';
 import { Activites } from './activites';
-import { VideoPresentation } from './video-presentation';
 import { useEffect, useRef, useState } from 'react';
 import config from '~/config.json';
 import styles from './home.module.css';
@@ -48,7 +47,6 @@ export const Home = () => {
   const [visibleSections, setVisibleSections] = useState([]);
   const [scrollIndicatorHidden, setScrollIndicatorHidden] = useState(false);
   const intro = useRef();
-  const videoPres = useRef();
   const formation = useRef();
   const experiences = useRef();
   const competences = useRef();
@@ -58,7 +56,7 @@ export const Home = () => {
   const profile = useRef();
 
   useEffect(() => {
-    const sections = [intro, videoPres, formation, experiences, competences, mobilite, engagement, activites, profile];
+    const sections = [intro, formation, experiences, competences, mobilite, engagement, activites, profile];
 
     const sectionObserver = new IntersectionObserver(
       (entries, observer) => {
@@ -103,12 +101,6 @@ export const Home = () => {
         id="intro"
         sectionRef={intro}
         scrollIndicatorHidden={scrollIndicatorHidden}
-      />
-
-      <VideoPresentation
-        id="video-presentation"
-        sectionRef={videoPres}
-        visible={visibleSections.includes(videoPres.current)}
       />
 
       <Formation
