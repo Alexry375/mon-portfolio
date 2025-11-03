@@ -6,12 +6,17 @@ import { startTransition, useEffect, useRef } from 'react';
 import {
   AmbientLight,
   DirectionalLight,
+  EdgesGeometry,
+  IcosahedronGeometry,
+  LineBasicMaterial,
   LinearSRGBColorSpace,
+  LineSegments,
   Mesh,
   MeshPhongMaterial,
   PerspectiveCamera,
   Scene,
   SphereGeometry,
+  TorusKnotGeometry,
   UniformsUtils,
   Vector2,
   WebGLRenderer,
@@ -80,8 +85,20 @@ export const DisplacementSphere = props => {
     };
 
     startTransition(() => {
-      geometry.current = new SphereGeometry(32, 128, 128);
-      sphere.current = new Mesh(geometry.current, material.current);
+      // Create base geometry (TorusKnot for interesting wireframe)
+      const baseGeometry = new TorusKnotGeometry(18, 6, 100, 16);
+
+      // Extract edges from the geometry
+      geometry.current = new EdgesGeometry(baseGeometry);
+
+      // Create line material with blue color
+      const lineMaterial = new LineBasicMaterial({
+        color: 0x64B4F6,
+        linewidth: 2,
+      });
+
+      // Create line segments instead of mesh
+      sphere.current = new LineSegments(geometry.current, lineMaterial);
       sphere.current.position.z = 0;
       sphere.current.modifier = Math.random();
       scene.current.add(sphere.current);
