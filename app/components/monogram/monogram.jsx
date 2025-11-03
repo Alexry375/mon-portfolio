@@ -10,22 +10,37 @@ export const Monogram = forwardRef(({ highlight, className, ...props }, ref) => 
     <svg
       aria-hidden
       className={classes(styles.monogram, className)}
-      width="48"
-      height="29"
-      viewBox="0 0 48 29"
+      width="100"
+      height="60"
+      viewBox="0 0 60 40"
       ref={ref}
       {...props}
     >
       <defs>
         <clipPath id={clipId}>
-          <path d="M0 0h6.5a6 6 0 0 1 5.2 3.1L19.4 17l4-9L19 0h6.5a6 6 0 0 1 5.2 3.1L39.5 19 35 29 24.5 10 16 29 0 0Zm46.7 2.8A2 2 0 0 0 45 0h-7l5.5 10 3.2-7.2Z" />
+          {/* Letter A */}
+          <path d="M 5 35 L 12 10 L 19 35 M 8 25 L 16 25" />
+          {/* Letter B */}
+          <path d="M 30 10 L 30 35 M 30 10 Q 40 10 40 17.5 Q 40 22.5 30 22.5 M 30 22.5 Q 42 22.5 42 28.75 Q 42 35 30 35" />
         </clipPath>
       </defs>
-      <rect clipPath={`url(#${clipId})`} width="100%" height="100%" />
+      <text
+        x="2"
+        y="34"
+        className={styles.text}
+        style={{ fontFamily: 'Fascinate Inline, cursive', fontSize: '36px', fontWeight: '400', letterSpacing: '-2px' }}
+      >
+        AB
+      </text>
       {highlight && (
-        <g clipPath={`url(#${clipId})`}>
-          <rect className={styles.highlight} width="100%" height="100%" />
-        </g>
+        <text
+          x="2"
+          y="34"
+          className={styles.highlight}
+          style={{ fontFamily: 'Fascinate Inline, cursive', fontSize: '36px', fontWeight: '400', letterSpacing: '-2px' }}
+        >
+          AB
+        </text>
       )}
     </svg>
   );

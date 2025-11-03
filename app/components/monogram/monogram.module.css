@@ -2,29 +2,29 @@
   .monogram {
     fill: var(--textTitle);
     transition: fill var(--durationL) ease;
+    overflow: visible;
+  }
+
+  .text {
+    fill: var(--textTitle);
+    transition: fill var(--durationL) ease;
   }
 
   .highlight {
     fill: var(--accent);
-    opacity: 0;
-    transform: scale3d(1, 0, 1);
-    transform-origin: top;
-    transition: opacity 0.1s ease var(--durationM);
+    clip-path: inset(100% 0 0 0);
+    transition: clip-path 0.1s ease;
 
     @media (--mediaUseMotion) {
-      transition: transform var(--durationM) var(--bezierFastoutSlowin),
-        opacity 0.1s ease var(--durationM);
+      transition: clip-path var(--durationM) var(--bezierFastoutSlowin);
     }
 
     :is(a:hover, .monogram:hover) & {
-      opacity: 1;
-      transform: scale3d(1, 1, 1);
-      transform-origin: bottom;
-      transition: opacity 0.1s ease;
+      clip-path: inset(0 0 0 0);
+      transition: clip-path 0.1s ease;
 
       @media (--mediaUseMotion) {
-        transition: transform var(--durationM) var(--bezierFastoutSlowin),
-          opacity 0.1s ease;
+        transition: clip-path var(--durationM) var(--bezierFastoutSlowin);
       }
     }
   }
