@@ -12,7 +12,6 @@ export function Competences({ id, sectionRef, visible }) {
       { name: 'MATLAB', description: 'Scientific computing' },
       { name: 'OCaml', description: 'Functional programming' },
       { name: 'Ada', description: 'Real-time systems' },
-      { name: 'Java', description: 'OOP, Enterprise apps' },
       { name: 'JavaScript/React', description: 'Web development' }
     ],
     'Machine Learning & AI': [
