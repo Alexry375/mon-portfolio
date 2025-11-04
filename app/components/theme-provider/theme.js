@@ -113,16 +113,16 @@ const dark = {
   primary: '#64B4F6',
   accent: '#64B4F6',
   error: '#F06292',
-  text: '#ffffff',
+  text: '#ff0000',
   textTitle: '#ffffff',
-  textBody: 'rgba(255, 255, 255, 0.8)',
-  textLight: 'rgba(255, 255, 255, 0.6)',
+  textBody: '#ff0000',
+  textLight: '#ff0000',
   // RGB values for use with rgb() function
   rgbBackground: '17, 17, 17',
   rgbBackgroundLight: '26, 26, 26',
   rgbPrimary: '100, 180, 246',
   rgbAccent: '100, 180, 246',
-  rgbText: '255, 255, 255',
+  rgbText: '255, 0, 0',
 };
 
 const light = {
