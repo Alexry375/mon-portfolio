@@ -5,6 +5,7 @@ import { Link } from '~/components/link';
 import { Section } from '~/components/section';
 import { Text } from '~/components/text';
 import { Transition } from '~/components/transition';
+import { Button } from '~/components/button';
 import { Fragment, useState } from 'react';
 import styles from './activites.module.css';
 
@@ -28,6 +29,13 @@ export const Activites = ({ id, visible, sectionRef }) => {
 
   const events = [
     {
+      type: 'Conference',
+      title: 'DevFest Toulouse',
+      description: 'Google Developer conference',
+      frequency: 'Annual',
+      icon: '🎪'
+    },
+    {
       type: 'TEDx',
       title: 'TEDx Toulouse',
       description: 'Innovation & tech talks',
@@ -42,11 +50,12 @@ export const Activites = ({ id, visible, sectionRef }) => {
       icon: '📊'
     },
     {
-      type: 'Conference',
-      title: 'DevFest Toulouse',
-      description: 'Dev festival with talks & workshops',
-      frequency: 'Yearly',
-      icon: '💻'
+      type: 'Organizing',
+      title: 'My First Meetup',
+      description: 'Organizing my first tech meetup',
+      frequency: 'Dec 1, 2025',
+      icon: '🎯',
+      link: 'https://www.meetup.com/artilect-fablab/events/312061214/'
     },
     {
       type: 'Hackathon',
@@ -114,28 +123,47 @@ export const Activites = ({ id, visible, sectionRef }) => {
                 </div>
               </div>
               <div className={styles.eventsGrid}>
-                {events.map((event, index) => (
-                  <div
-                    key={event.title}
-                    className={styles.eventCard}
-                    data-visible={visible}
-                    style={{ transitionDelay: `${600 + index * 100}ms` }}
-                  >
-                    <div className={styles.eventHeader}>
-                      <span className={styles.eventIcon}>{event.icon}</span>
-                      <span className={styles.eventType}>{event.type}</span>
+                {events.map((event, index) => {
+                  const EventCard = (
+                    <>
+                      <div className={styles.eventHeader}>
+                        <span className={styles.eventIcon}>{event.icon}</span>
+                        <span className={styles.eventType}>{event.type}</span>
+                      </div>
+                      <Heading level={5} className={styles.eventTitle}>
+                        {event.title}
+                      </Heading>
+                      <Text size="s" className={styles.eventDescription}>
+                        {event.description}
+                      </Text>
+                      <Text size="s" className={styles.eventFrequency}>
+                        {event.frequency}
+                      </Text>
+                      {event.link && (
+                        <Button
+                          href={event.link}
+                          className={styles.eventButton}
+                          secondary
+                          iconHoverShift
+                          icon="send"
+                        >
+                          View event page
+                        </Button>
+                      )}
+                    </>
+                  );
+
+                  return (
+                    <div
+                      key={event.title}
+                      className={styles.eventCard}
+                      data-visible={visible}
+                      style={{ transitionDelay: `${600 + index * 100}ms` }}
+                    >
+                      {EventCard}
                     </div>
-                    <Heading level={5} className={styles.eventTitle}>
-                      {event.title}
-                    </Heading>
-                    <Text size="s" className={styles.eventDescription}>
-                      {event.description}
-                    </Text>
-                    <Text size="s" className={styles.eventFrequency}>
-                      {event.frequency}
-                    </Text>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
           </div>

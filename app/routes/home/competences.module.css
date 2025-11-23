@@ -35,7 +35,7 @@
 .categoryTitle {
   font-size: var(--fontSizeH4);
   margin-bottom: var(--spaceL);
-  color: var(--colorAccent);
+  color: var(--accent);
   position: relative;
   padding-bottom: var(--spaceS);
 }
@@ -47,7 +47,7 @@
   left: 0;
   width: 50px;
   height: 2px;
-  background: var(--colorAccent);
+  background: var(--accent);
 }
 
 .skillsList {
@@ -74,7 +74,7 @@
 }
 
 .skillLevel {
-  color: var(--colorAccent);
+  color: var(--accent);
   font-weight: var(--fontWeightBold);
 }
 
@@ -95,7 +95,7 @@
   height: 100%;
   background: linear-gradient(
     90deg,
-    var(--colorAccent),
+    var(--accent),
     rgb(var(--rgbAccent) / 0.7)
   );
   border-radius: 4px;
@@ -108,7 +108,7 @@
 }
 
 .skillDescription {
-  color: var(--colorTextLight);
+  color: color-mix(in lab, var(--text) 60%, transparent);
   font-style: italic;
 }
 
@@ -121,7 +121,7 @@
 }
 
 .infoText {
-  color: var(--colorTextLight);
+  color: var(--textLight);
   line-height: 1.7;
   max-width: 800px;
   margin: 0 auto;

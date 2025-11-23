@@ -43,7 +43,7 @@
   transition-duration: var(--durationXL);
   transition-delay: calc(var(--durationM) + 100ms);
   opacity: 0;
-  color: var(--colorTextLight);
+  color: var(--textLight);
 }
 
 .description[data-visible='true'] {
@@ -55,9 +55,9 @@
   padding: var(--spaceM);
   background: rgb(var(--rgbAccent) / 0.1);
   border-radius: var(--borderRadius);
-  border-left: 3px solid var(--colorAccent);
+  border-left: 3px solid var(--accent);
   font-style: italic;
-  color: var(--colorTextLight);
+  color: var(--textLight);
   transition-property: opacity;
   transition-timing-function: var(--bezierFastoutSlowin);
   transition-duration: var(--durationXL);
@@ -99,7 +99,7 @@
   font-weight: var(--fontWeightMedium);
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--colorAccent);
+  color: var(--accent);
   opacity: 0;
   transition: opacity var(--durationM) var(--bezierFastoutSlowin)
     calc(var(--durationXL) + 100ms);
@@ -138,12 +138,12 @@
 .highlightTitle {
   font-size: var(--fontSizeH5);
   margin-bottom: var(--spaceM);
-  color: var(--colorTextTitle);
+  color: var(--textTitle);
 }
 
 .highlightText {
   line-height: 1.8;
-  color: var(--colorTextLight);
+  color: var(--textLight);
 }
 
 @media (--mediaDesktop) {

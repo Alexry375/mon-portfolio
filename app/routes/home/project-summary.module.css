@@ -164,6 +164,18 @@
     bottom: 24%;
     transform: translateY(50%);
 
+    @media (--mediaDesktop) {
+      width: 90%;
+      right: -20%;
+      bottom: 24%;
+    }
+
+    @media (--mediaLaptop) {
+      width: 85%;
+      right: -15%;
+      bottom: 22%;
+    }
+
     @media (--mediaTablet) {
       width: 80%;
       right: -10%;

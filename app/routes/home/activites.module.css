@@ -43,7 +43,7 @@
   transition-duration: var(--durationXL);
   transition-delay: calc(var(--durationM) + 100ms);
   opacity: 0;
-  color: var(--colorTextLight);
+  color: var(--textLight);
 }
 
 .description[data-visible='true'] {
@@ -61,7 +61,7 @@
 .benefitsTitle {
   font-size: var(--fontSizeH5);
   margin-bottom: var(--spaceL);
-  color: var(--colorTextTitle);
+  color: var(--textTitle);
   opacity: 0;
   transition: opacity var(--durationL) ease;
   transition-delay: calc(var(--durationM) + 200ms);
@@ -90,7 +90,7 @@
   content: '✓';
   position: absolute;
   left: 0;
-  color: var(--colorAccent);
+  color: var(--accent);
   font-weight: var(--fontWeightBold);
 }
 
@@ -112,12 +112,12 @@
 }
 
 .benefitText {
-  color: var(--colorTextLight);
+  color: var(--textLight);
   line-height: 1.7;
 }
 
 .benefitText strong {
-  color: var(--colorText);
+  color: var(--text);
   font-weight: var(--fontWeightMedium);
 }
 
@@ -136,7 +136,7 @@
   font-weight: var(--fontWeightMedium);
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--colorAccent);
+  color: var(--accent);
   opacity: 0;
   transition: opacity var(--durationM) var(--bezierFastoutSlowin)
     calc(var(--durationXL) + 100ms);
@@ -175,6 +175,7 @@
   transform: scale(1);
 }
 
+
 .eventHeader {
   display: flex;
   align-items: center;
@@ -190,7 +191,7 @@
   font-size: var(--fontSizeBodyXS);
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--colorAccent);
+  color: var(--accent);
   font-weight: var(--fontWeightMedium);
 }
 
@@ -198,23 +199,28 @@
   font-size: var(--fontSizeBodyM);
   font-weight: var(--fontWeightMedium);
   margin-bottom: var(--spaceXS);
-  color: var(--colorTextTitle);
+  color: var(--textTitle);
 }
 
+
 .eventDescription {
-  color: var(--colorTextLight);
+  color: var(--textLight);
   line-height: 1.5;
   margin-bottom: var(--spaceS);
 }
 
 .eventFrequency {
-  color: var(--colorAccent);
+  color: var(--accent);
   font-weight: var(--fontWeightMedium);
   font-size: var(--fontSizeBodyXS);
   padding: 2px 8px;
   background: rgb(var(--rgbAccent) / 0.1);
   border-radius: 4px;
   display: inline-block;
+}
+
+.eventButton {
+  margin-top: var(--spaceM);
 }
 
 @media (--mediaLaptop) {

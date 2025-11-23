@@ -18,14 +18,12 @@ export function Competences({ id, sectionRef, visible }) {
       { name: 'TensorFlow/PyTorch', description: 'Deep Learning' },
       { name: 'Computer Vision', description: 'Image processing' },
       { name: 'NLP', description: 'Natural language' },
-      { name: 'Reinforcement Learning', description: 'RL algorithms' },
-      { name: 'Scikit-learn', description: 'Classical ML' }
+      { name: 'Reinforcement Learning', description: 'RL algorithms' }
     ],
     'Tools & Tech': [
       { name: 'Docker', description: 'Containerization' },
       { name: 'Linux', description: 'System admin' },
-      { name: 'SQL', description: 'Databases' },
-      { name: 'Cloud (AWS/GCP)', description: 'Cloud services' }
+      { name: 'SQL', description: 'Databases' }
     ],
     'Soft Skills': [
       { name: 'Project Management', description: 'Agile, Scrum' },

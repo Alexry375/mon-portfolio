@@ -42,7 +42,7 @@
   transition-duration: var(--durationXL);
   transition-delay: calc(var(--durationM) + 100ms);
   opacity: 0;
-  color: var(--colorTextLight);
+  color: var(--textLight);
 }
 
 .description[data-visible='true'] {
@@ -67,7 +67,7 @@
 .responsibilitiesTitle {
   font-size: var(--fontSizeH5);
   margin-bottom: var(--spaceM);
-  color: var(--colorTextTitle);
+  color: var(--textTitle);
   opacity: 0;
   transition: opacity var(--durationL) ease;
   transition-delay: calc(var(--durationM) + 250ms);
@@ -94,14 +94,14 @@
   position: relative;
   padding-left: var(--spaceL);
   margin-bottom: var(--spaceM);
-  color: var(--colorTextLight);
+  color: var(--textLight);
 }
 
 .listItem::before {
   content: '→';
   position: absolute;
   left: 0;
-  color: var(--colorAccent);
+  color: var(--accent);
   font-weight: var(--fontWeightBold);
 }
 
@@ -120,7 +120,7 @@
   font-weight: var(--fontWeightMedium);
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--colorAccent);
+  color: var(--accent);
   opacity: 0;
   transition: opacity var(--durationM) var(--bezierFastoutSlowin)
     calc(var(--durationXL) + 100ms);
@@ -173,11 +173,11 @@
   font-size: var(--fontSizeBodyM);
   font-weight: var(--fontWeightMedium);
   margin-bottom: var(--spaceXS);
-  color: var(--colorTextTitle);
+  color: var(--textTitle);
 }
 
 .achievementText {
-  color: var(--colorTextLight);
+  color: var(--textLight);
   line-height: 1.6;
 }
 
@@ -189,7 +189,7 @@
     rgb(var(--rgbAccent) / 0.1)
   );
   border-radius: var(--borderRadius);
-  border-left: 3px solid var(--colorAccent);
+  border-left: 3px solid var(--accent);
   opacity: 0;
   transition: opacity var(--durationXL) ease;
   transition-delay: calc(var(--durationM) + 400ms);
@@ -201,7 +201,7 @@
 
 .quoteText {
   font-style: italic;
-  color: var(--colorTextLight);
+  color: var(--textLight);
   line-height: 1.7;
 }
 

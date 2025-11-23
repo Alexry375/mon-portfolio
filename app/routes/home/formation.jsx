@@ -3,12 +3,10 @@ import { Heading } from '~/components/heading';
 import { Text } from '~/components/text';
 import { Transition } from '~/components/transition';
 import { Image } from '~/components/image';
-import { useState } from 'react';
 import n7Logo from '/Logo-toulouse-inp-N7.png';
 import styles from './formation.module.css';
 
 export function Formation({ id, sectionRef, visible }) {
-  const [videoRevealed, setVideoRevealed] = useState(false);
   return (
     <Section
       className={styles.formation}
@@ -59,23 +57,6 @@ export function Formation({ id, sectionRef, visible }) {
                         • Team projects in software dev
                       </Text>
                     </div>
-                  </div>
-                  <div className={styles.videoWrapper}>
-                    <div
-                      className={styles.videoContainer}
-                      onMouseEnter={() => setVideoRevealed(true)}
-                      data-revealed={videoRevealed}
-                    >
-                      <iframe
-                        src={videoRevealed ? "https://drive.google.com/file/d/1DzoiV7Jl-muLI-nqtlfcXDe0_4AB-WAS/preview" : "about:blank"}
-                        className={styles.videoIframe}
-                        allow="autoplay"
-                        title="Introduction video"
-                      />
-                    </div>
-                    <Text size="s" className={styles.videoCaption}>
-                      Video presentation
-                    </Text>
                   </div>
                 </div>
               </div>

@@ -14,7 +14,7 @@ import styles from './home.module.css';
 
 // Assets pour le projet GIFTED
 import giftedLogo from '/Gifted_logo-removebg-preview.png';
-import giftedShot from '/Shot_Gifted.jpeg';
+import giftedShot from '/Shot_Gifted.png';
 
 // Prefetch draco decoader wasm
 export const links = () => {
@@ -115,8 +115,8 @@ export const Home = () => {
         visible={visibleSections.includes(experiences.current)}
         title="GIFTED - AI-Powered Gift Experiences"
         description="AI app that turns memories (photos/videos) into personalized gift narratives. Available as physical boxes (NFC/USB) or 100% digital."
-        buttonText="View MVP (Coming soon)"
-        buttonLink="#"
+        buttonText="View MVP"
+        buttonLink="https://applicationgifted.vercel.app/"
         model={{
           type: 'laptop',
           alt: 'GIFTED App - AI Gift Recommendations',

@@ -115,11 +115,11 @@
       }
 
       &::after {
-        background: color-mix(in lab, var(--text) 0%, transparent);
-      }
-
-      &:hover::after {
-        background: color-mix(in lab, var(--text) 10%, transparent);
+        content: none !important;
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        background: transparent !important;
       }
     }
 

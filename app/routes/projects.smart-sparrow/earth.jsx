@@ -1,4 +1,4 @@
-import earthModel from '~/assets/earth.glb';
+import earthModel from '/earth.glb';
 import mwnx from '~/assets/milkyway-nx.hdr';
 import mwny from '~/assets/milkyway-ny.hdr';
 import mwnz from '~/assets/milkyway-nz.hdr';

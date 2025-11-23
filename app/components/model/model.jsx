@@ -10,6 +10,7 @@ import {
 } from 'react';
 import {
   AmbientLight,
+  Box3,
   Color,
   DirectionalLight,
   Group,
@@ -89,6 +90,8 @@ export const Model = ({
   const rotationY = useSpring(0, rotationSpringConfig);
 
   useEffect(() => {
+    if (!container.current) return;
+
     const { clientWidth, clientHeight } = container.current;
 
     renderer.current = new WebGLRenderer({
@@ -246,6 +249,12 @@ export const Model = ({
 
   // Handle render passes for a single frame
   const renderFrame = useCallback(() => {
+    // Ensure all required objects exist before rendering
+    if (!renderer.current || !scene.current || !camera.current) {
+      console.warn('[Model] Renderer not ready for frame');
+      return;
+    }
+
     const blurAmount = 5;
 
     // Remove the background
@@ -277,6 +286,7 @@ export const Model = ({
     modelGroup.current.rotation.y = rotationY.get();
 
     renderer.current.render(scene.current, camera.current);
+    console.log('[Model] Frame rendered');
   }, [blurShadow, rotationX, rotationY]);
 
   // Handle mouse move animation
@@ -323,6 +333,39 @@ export const Model = ({
       window.removeEventListener('resize', handleResize);
     };
   }, [renderFrame]);
+
+  // Force render after hydration in production
+  useEffect(() => {
+    if (!loaded) return;
+
+    // Force multiple renders to ensure visibility in production
+    const forceRenders = () => {
+      if (renderFrame) {
+        console.log('[Model] Forcing render after hydration');
+        renderFrame();
+      }
+    };
+
+    // Immediate render
+    forceRenders();
+
+    // Render after a microtask
+    Promise.resolve().then(forceRenders);
+
+    // Render after animation frame
+    requestAnimationFrame(forceRenders);
+
+    // Render after timeout
+    const timer1 = setTimeout(forceRenders, 50);
+    const timer2 = setTimeout(forceRenders, 200);
+    const timer3 = setTimeout(forceRenders, 500);
+
+    return () => {
+      clearTimeout(timer1);
+      clearTimeout(timer2);
+      clearTimeout(timer3);
+    };
+  }, [loaded, renderFrame]);
 
   return (
     <div
@@ -389,15 +432,29 @@ const Device = ({
       let loadFullResTexture;
       let playAnimation;
 
+      console.log('[Model] Loading model from:', url);
+
       const [placeholder, gltf] = await Promise.all([
         await textureLoader.loadAsync(texture.placeholder),
         await modelLoader.loadAsync(url),
       ]);
 
+      console.log('[Model] Model loaded successfully:', gltf);
+      console.log('[Model] Scene children:', gltf.scene.children);
+
+      // Compute bounding box to see model dimensions
+      const box = new Box3().setFromObject(gltf.scene);
+      const size = new Vector3();
+      box.getSize(size);
+      console.log('[Model] Model dimensions:', size);
+      console.log('[Model] Model center:', box.getCenter(new Vector3()));
+
       modelGroup.current.add(gltf.scene);
+      console.log('[Model] Model added to scene');
 
       gltf.scene.traverse(async node => {
-        if (node.material) {
+        if (node.material && node.name !== MeshType.Screen) {
+          // Back to original black color
           node.material.color = new Color(0x1f2025);
         }
 
@@ -429,9 +486,15 @@ const Device = ({
 
       const targetPosition = new Vector3(position.x, position.y, position.z);
 
-      if (reduceMotion) {
-        gltf.scene.position.set(...targetPosition.toArray());
-      }
+      // Always set the position immediately so the model is visible
+      gltf.scene.position.set(...targetPosition.toArray());
+      console.log('[Model] Model position set to:', targetPosition);
+
+      // Schedule a render after a microtask to ensure everything is ready
+      Promise.resolve().then(() => {
+        renderFrame();
+        console.log('[Model] Initial render completed');
+      });
 
       // Simple slide up animation
       if (model.animation === ModelAnimationType.SpringUp) {
@@ -487,7 +550,7 @@ const Device = ({
         };
       }
 
-      return { loadFullResTexture, playAnimation };
+      return { loadFullResTexture, playAnimation, renderFrame };
     };
 
     setLoadDevice({ start: load });
@@ -500,19 +563,31 @@ const Device = ({
     let animation;
 
     const onModelLoad = async () => {
-      const { loadFullResTexture, playAnimation } = await loadDevice.start();
+      const { loadFullResTexture, playAnimation, renderFrame: render } = await loadDevice.start();
 
       setLoaded(true);
       onLoad?.();
 
-      if (!reduceMotion) {
+      // Always do an initial render
+      if (render) {
+        render();
+        console.log('[Model] Force render after load');
+      }
+
+      if (!reduceMotion && playAnimation) {
         animation = playAnimation();
       }
 
-      await loadFullResTexture();
+      if (loadFullResTexture) {
+        await loadFullResTexture();
+      }
 
-      if (reduceMotion) {
-        renderFrame();
+      // Final render after everything
+      if (render) {
+        setTimeout(() => {
+          render();
+          console.log('[Model] Final render after timeout');
+        }, 100);
       }
     };
 

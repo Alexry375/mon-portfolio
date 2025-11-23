@@ -60,7 +60,7 @@
 
 .timelinePeriod {
   font-weight: var(--fontWeightBold);
-  color: var(--colorAccent);
+  color: var(--accent);
   margin-bottom: var(--spaceM);
   font-size: var(--fontSizeBodyS);
   letter-spacing: 0.05em;
@@ -106,7 +106,7 @@
 }
 
 .videoCaption {
-  color: var(--colorTextLight);
+  color: var(--textLight);
   text-align: center;
   font-style: italic;
 }
@@ -158,12 +158,12 @@
 
 .degree {
   font-weight: var(--fontWeightMedium);
-  color: var(--colorAccent);
+  color: var(--accent);
   margin-bottom: var(--spaceM);
 }
 
 .description {
-  color: var(--colorTextLight);
+  color: var(--textBody);
   line-height: 1.7;
   margin-bottom: var(--spaceM);
 }
@@ -176,7 +176,7 @@
 }
 
 .highlight {
-  color: var(--colorTextLight);
+  color: var(--textLight);
   position: relative;
   padding-left: var(--spaceM);
 }
